@@ -32,6 +32,7 @@
               :key="variant.id"
               @mouseover="updateImage(variant.image)"
               class="color-circle"
+              :class="[isActive ? activeClass : '']"
               :style="{backgroundColor: variant.color}"
             >
               <!-- The code inside the curly braces is JAvascript, not CSS. That's why it's camel case. That's going from html, into javascript, then CSS. 
