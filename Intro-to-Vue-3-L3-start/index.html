@@ -16,7 +16,8 @@
         <div class="product-container">
           <div class="product-image">
             <!-- image goes here -->
-            <img v-bind:src="image" alt="" />
+            <img :src="image" alt="" />
+            <!-- : is short hand for v-bind. It can be used in every use case with an attribute and an expression -->
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
