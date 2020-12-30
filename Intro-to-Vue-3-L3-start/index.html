@@ -20,7 +20,9 @@
             <!-- : is short hand for v-bind. It can be used in every use case with an attribute and an expression -->
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <a :href="url">
+              <h1>{{ product }}</h1>
+            </a>
           </div>
         </div>
       </div>
