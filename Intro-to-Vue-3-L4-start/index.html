@@ -23,6 +23,7 @@
             <!-- v-show is another way of toggling visibility. It adds a display none type element to it. Element still exists on the DOM -->
             <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
             <p v-else>Out of Stock</p>
+            <p v-if="onSale">On Sale</p>
           </div>
         </div>
       </div>
