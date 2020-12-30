@@ -19,7 +19,7 @@
           <div class="product-image">
             <img
               v-bind:src="image"
-              :class="[inStock ? out-of-stock-img : '']"
+              :class="[!inStock ? out-of-stock-img : '']"
             />
           </div>
           <div class="product-info">
