@@ -33,8 +33,19 @@
               @mouseover="updateImage(variant.image)"
               class="color-circle"
               :style="{backgroundColor: variant.color}"
-            ></div>
-            <button class="button" @click="addToCart">Add to Cart</button>
+            >
+              <!-- The code inside the curly braces is JAvascript, not CSS. That's why it's camel case. That's going from html, into javascript, then CSS. 
+              
+              The style can also be added into the vue as a data object -->
+            </div>
+            <button
+              class="button"
+              @click="addToCart"
+              :disabled="!inStock"
+              :class="{disabledButton: !inStock}"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
