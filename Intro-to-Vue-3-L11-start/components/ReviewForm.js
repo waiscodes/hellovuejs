@@ -3,6 +3,7 @@ app.component("review-form", {
     /*html*/
     `<form class="review-form" @submit.prevent="onSubmit">
       <h3>Leave a review</h3>
+      
       <label for="name">Name:</label>
       <input id="name" v-model="name">
 
@@ -18,7 +19,6 @@ app.component("review-form", {
         <option>1</option>
       </select>
 
-      <!-- solution -->   
       <input class="button" type="submit" value="Submit">  
     </form>`,
   data() {
@@ -28,14 +28,20 @@ app.component("review-form", {
       rating: null,
     };
   },
-  method: {
+  methods: {
     onSubmit() {
+      if (this.name === "" || this.review === "" || this.rating === null) {
+        alert("Please fill out every field.");
+        return;
+      }
+
       let productReview = {
         name: this.name,
         review: this.review,
         rating: this.rating,
       };
       this.$emit("review-submitted", productReview);
+
       this.name = "";
       this.review = "";
       this.rating = null;
