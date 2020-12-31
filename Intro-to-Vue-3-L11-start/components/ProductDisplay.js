@@ -42,7 +42,7 @@ app.component("product-display", {
       </div>
     </div>
   </div>
-  <review-form></review-form>
+  <review-form @review-submitted="addReview" ></review-form>
   `,
   data() {
     return {
@@ -64,6 +64,7 @@ app.component("product-display", {
           quantity: 0,
         },
       ],
+      review: [],
     };
   },
   methods: {
@@ -72,6 +73,9 @@ app.component("product-display", {
     },
     updateVariant(index) {
       this.selectedVariant = index;
+    },
+    addReview(review) {
+      this.reviews.push(review);
     },
   },
   computed: {
