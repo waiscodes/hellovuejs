@@ -38,13 +38,11 @@ app.component("product-display", {
           v-on:click="addToCart">
           Add to Cart
         </button>
-
       </div>
     </div>
-  </div>
-  <review-list :reviews="reviews"></review-list>
-  <review-form @review-submitted="addReview" ></review-form>
-  `,
+    <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+    <review-form @review-submitted="addReview"></review-form>
+  </div>`,
   data() {
     return {
       product: "Socks",
@@ -65,7 +63,7 @@ app.component("product-display", {
           quantity: 0,
         },
       ],
-      review: [],
+      reviews: [],
     };
   },
   methods: {

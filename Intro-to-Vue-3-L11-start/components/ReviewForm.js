@@ -3,7 +3,7 @@ app.component("review-form", {
     /*html*/
     `<form class="review-form" @submit.prevent="onSubmit">
       <h3>Leave a review</h3>
-      
+
       <label for="name">Name:</label>
       <input id="name" v-model="name">
 
